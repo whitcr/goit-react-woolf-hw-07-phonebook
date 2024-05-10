@@ -2,7 +2,7 @@ import ContactItem from 'components/ContactItem/ContactItem';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  selectContacts,
+  selectContactList,
   selectError,
   selectIsLoading,
 } from '../../redux/selector';
@@ -17,7 +17,7 @@ const ContactList = () => {
     dispatch(getContactsAction());
   }, [dispatch]);
 
-  const contacts = useSelector(selectContacts);
+  const contacts = useSelector(selectContactList);
   return (
     <>
       {isLoading && <h1>Loading...</h1>}
